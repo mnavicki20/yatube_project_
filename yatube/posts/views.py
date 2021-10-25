@@ -5,7 +5,7 @@ from .models import Post
 def index(request):
     posts = Post.objects.order_by('-pub_date')[:10]
     template = 'posts/index.html'
-    context = {'posts': posts ,}
+    context = {'posts': posts, }
     return render(request, template, context)
 
 
