@@ -1,14 +1,11 @@
 from django.shortcuts import render
+from .models import Post
 
 
 def index(request):
+    posts = Post.objects.order_by('-pub_date')[:10]
     template = 'posts/index.html'
-    title = 'Yatube'
-    text = 'Это главная страница проекта Yatube'
-    context = {
-        'title': title,
-        'text': text,
-    }
+    context = {'posts': posts ,}
     return render(request, template, context)
 
 
