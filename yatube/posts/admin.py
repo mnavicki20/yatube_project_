@@ -20,7 +20,6 @@ class GroupAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'slug',
-        'description',
     )
 
 
